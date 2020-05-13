@@ -12,7 +12,8 @@ namespace IdentityServer
         // [video-11 06:40] this is how IdentityServer4 lets you identify your API
         public static IEnumerable<ApiResource> GetApis() =>
             new List<ApiResource>() { 
-                new ApiResource("ApiOne")
+                new ApiResource("ApiOne"),
+                new ApiResource("ApiTwo")
             };
 
         // we need a client that will consume this API
@@ -31,6 +32,13 @@ namespace IdentityServer
                     // now we want to specify the scopes that this client is allowed to get
                     // scopes means "what can this access token be used for?"
                     AllowedScopes = { "ApiOne" }
+                },
+                new Client
+                {
+                    ClientId = "client_id_mvc",
+                    ClientSecrets = { new Secret("client_secret_mvc".ToSha256()) },
+                    AllowedGrantTypes = GrantTypes.Code,
+                    AllowedScopes = { "ApiOne", "ApiTwo" },
                 }
             };
     }
