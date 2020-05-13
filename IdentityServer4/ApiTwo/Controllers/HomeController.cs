@@ -19,6 +19,7 @@ namespace ApiTwo.Controllers
             this.httpClientFactory = httpClientFactory;
         }
         
+        [Route("/")]
         public async Task<IActionResult> Index()
         {
             // 1. Retrieve access token
@@ -43,12 +44,15 @@ namespace ApiTwo.Controllers
                 });
 
             // 2. Retrieve secret data
-
-
+            var apiClient = httpClientFactory.CreateClient();
+            apiClient.SetBearerToken(tokenResponse.AccessToken);
+            var response = await apiClient.GetAsync("https://localhost:44353/secret");
+            var content = await response.Content.ReadAsStringAsync();
 
             return Ok(new
             {
-
+                access_token = tokenResponse.AccessToken,
+                message = content,
             });
         }
     }
