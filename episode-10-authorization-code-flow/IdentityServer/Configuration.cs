@@ -9,7 +9,7 @@ namespace IdentityServer
 {
     public static class Configuration
     {
-        // [video-11 06:40] this is how IdentityServer4 lets you identify your API
+        // [episode-9 06:40] this is how IdentityServer4 lets you identify your API
         public static IEnumerable<ApiResource> GetApis() =>
             new List<ApiResource>() { 
                 new ApiResource("ApiOne"),

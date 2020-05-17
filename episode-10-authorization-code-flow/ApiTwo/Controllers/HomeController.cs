@@ -37,7 +37,7 @@ namespace ApiTwo.Controllers
 
                     ClientId = "client_id",
 
-                    // [video-11 ep.9 27"00] the client does not know anything about how to hash the secret
+                    // [episode-9 ep.9 27"00] the client does not know anything about how to hash the secret
                     ClientSecret = "client_secret",
 
                     Scope = "ApiOne",

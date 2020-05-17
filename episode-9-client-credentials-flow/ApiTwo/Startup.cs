@@ -21,7 +21,7 @@ namespace ApiTwo
                     config.Audience = "ApiTwo";
                 });
 
-            // [video-11 21:45] add an HTTP client to be able to request a token and to use that HTTP client to call ApiOne
+            // [episode-9 21:45] add an HTTP client to be able to request a token and to use that HTTP client to call ApiOne
             services.AddHttpClient();
 
             services.AddControllers();

@@ -16,10 +16,10 @@ namespace IdentityServer
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddIdentityServer() // [video-11 2:25] this will include authentication and authorization 
-               .AddInMemoryApiResources(Configuration.GetApis()) // [video-11 04:08] this is going to be our APIs
+            services.AddIdentityServer() // [episode-9 2:25] this will include authentication and authorization 
+               .AddInMemoryApiResources(Configuration.GetApis()) // [episode-9 04:08] this is going to be our APIs
                .AddInMemoryClients(Configuration.GetClients()) // this is going to be our client
-               .AddDeveloperSigningCredential() // [video-11 04:30] generate a developer certificate to create a signature and sign our tokens
+               .AddDeveloperSigningCredential() // [episode-9 04:30] generate a developer certificate to create a signature and sign our tokens
                ;
 
             services.AddControllersWithViews();

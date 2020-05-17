@@ -17,7 +17,7 @@ namespace ApiOne
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddAuthentication("Bearer")
-                .AddJwtBearer("Bearer", config => // [video-11 15:30] let's name it "Bearer" so that we can link it to our authentication
+                .AddJwtBearer("Bearer", config => // [episode-9 15:30] let's name it "Bearer" so that we can link it to our authentication
                 {
                     // config.MetadataAddress // the default value for this is /.well-known/openid-configuration
 
@@ -29,11 +29,11 @@ namespace ApiOne
                     // Audience is set to the same name as the one in IdentityServer.Configuration.GetApis()
                     config.Audience = "ApiOne";
 
-                    // [video-11 18:00] Authority and Audience identifies the API that will validate our token
+                    // [episode-9 18:00] Authority and Audience identifies the API that will validate our token
                     //============================================================================================
                 });
 
-            services.AddControllers(); // [video-11 14:30] no views
+            services.AddControllers(); // [episode-9 14:30] no views
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
